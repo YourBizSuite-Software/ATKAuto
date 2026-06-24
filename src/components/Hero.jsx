@@ -1,21 +1,36 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import bg1 from "../assets/atk-bg1.jpeg";
+import bg2 from "../assets/atk-bg2.jpeg";
+import bg3 from "../assets/atk-bg3.jpeg";
+
+const backgrounds = [bg1, bg2, bg3];
 
 export default function Hero() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % backgrounds.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+
+  }, []);
+
   return (
-    <section className="relative bg-[#232424] text-[#7d89a1]">
-      <div className="container py-20">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-          Find Your Next Ride
-        </h1>
-        <p className="mt-3 max-w-xl text-gray-600">
-          Quality pre-owned vehicles. Transparent prices. Simple financing.
-        </p>
-        <div className="mt-6 flex gap-3">
-          <Link to="/inventory" className="px-5 py-3 bg-[#7d89a1] text-slate-800 rounded-md font-semibold">
-            View Inventory
-          </Link>
-        </div>
-      </div>
+    <section
+      className="relative min-h-[500px] flex items-center bg-cover bg-center transition-all duration-1000"
+      style={{
+        backgroundImage: `url(${backgrounds[current]})`,
+      }}
+    >
+      {/* Dark Overlay */}
+      {/* Content */}
+      
+      <div className="absolute inset-0 bg-black/50" />
     </section>
+
   );
 }

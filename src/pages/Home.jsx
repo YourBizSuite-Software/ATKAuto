@@ -20,6 +20,20 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-[#232424] py-8">
+        <div className="container flex flex-col md:flex-row items-center justify-center gap-4">
+          <h1 className="text-white text-4xl md:text-5xl font-extrabold">
+            Find Your Next Ride
+          </h1>
+          <Link
+            to="/inventory"
+            className="px-6 py-3 bg-[#cdd2db] text-slate-800 rounded-md font-semibold"
+          >
+            View Inventory
+          </Link>
+        </div>
+      </section>
+
       {/* ---------- Hero Section ---------- */}
       <Hero />
 
