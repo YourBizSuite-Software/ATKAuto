@@ -5,7 +5,7 @@ export default function Contact() {
       <div className="bg-white p-6 rounded-lg shadow">
         <p className="mb-4 text-gray-700">Address: 1619 Lysle Blvd, MCKEESPORT, PA, 15132</p>
         <p className="mb-6 text-gray-700">Ph: (516)450-2265</p>
-        <p className="mb-6 text-gray-700">Email: atkautllc32@gmail.com</p>
+        <p className="mb-6 text-gray-700">Email: atkautollc32@gmail.com</p>
       </div>
     </section>
   );
